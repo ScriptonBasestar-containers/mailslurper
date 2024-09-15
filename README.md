@@ -9,7 +9,7 @@ Compiling
 ---------
 The following are general instructions for compiling MailSlurper. Your details may vary a bit here and there. The below example is based on a Unix-style system, such as Ubuntu or OSX. Furthermore for instructional purposes it is assumed that your GOPATH is set to *~/code/go*, and that you have a folder in your source directory called **github.com**. Your setup may vary. The instructions below also assume you have the following already installed.
 
-* Go 1.10 (or higher)
+* Go 1.23 (or higher)
 * Git
 
 ```bash
@@ -17,11 +17,11 @@ $ cd ~/code/go/src/github.com
 $ mkdir mailslurper
 $ cd mailslurper
 $ git clone https://github.com/mailslurper/mailslurper.git
-$ go get github.com/mjibson/esc
-$ cd mailslurper/cmd/mailslurper
-$ go get
-$ go generate
-$ go build
+$ cd mailslurper
+$ go mod tidy
+$ go mod downlaod
+$ go mod vendor
+$ go build cmd/mailslurper/mailslurper.go
 ```
 
 Quickstart With Docker
@@ -50,7 +50,6 @@ This application uses a lot of great open source libraries.
 * [Copier](https://github.com/jinzhu/copier) - MIT
 * [Echo](https://github.com/labstack/echo) - MIT
 * [errors](https://github.com/pkg/errors) - BSD 2-Clause
-* [esc](https://github.com/mjibson/esc) - MIT
 * [Font Awesome](http://fortawesome.github.io/Font-Awesome/) - Fonts under OFL License, CSS under MIT license
 * [GoUUID](https://github.com/nu7hatch/gouuid) - MIT
 * [go-cache](https://github.com/patrickmn/go-cache) - MIT
